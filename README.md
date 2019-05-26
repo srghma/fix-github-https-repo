@@ -8,6 +8,6 @@ Transforms:
 - `https://gitlab.mycompany.com/myusername/myproject`                        -> `ssh://git@gitlab.mycompany.com:myusername/myproject.git`
 - `https://gitlab.mycompany.com/myusername/myproject`           + --port 999 -> `ssh://git@gitlab.mycompany.com:999/myusername/myproject.git`
 - `git@gitlab.mycompany.com/myusername/myproject.git`           + --port 999 -> `ssh://git@gitlab.mycompany.com:999/myusername/myproject.git`
-- `git@gitlab.mycompany.com:999/myusername/myproject.git`       + --port 999 -> `ssh://git@gitlab.mycompany.com:999/myusername/myproject.git`
-- `ssh://git@gitlab.mycompany.com:999/myusername/myproject.git` + --port 999 -> `ssh://git@gitlab.mycompany.com:999/myusername/myproject.git`
+- `git@gitlab.mycompany.com:111/myusername/myproject.git`       + --port 999 -> `ssh://git@gitlab.mycompany.com:999/myusername/myproject.git`
+- `ssh://git@gitlab.mycompany.com:111/myusername/myproject.git` + --port 999 -> `ssh://git@gitlab.mycompany.com:999/myusername/myproject.git`
 
