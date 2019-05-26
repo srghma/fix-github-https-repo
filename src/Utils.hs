@@ -1,4 +1,4 @@
-module Utils where
+module Utils (showT) where
 
 import "protolude" Protolude
 
