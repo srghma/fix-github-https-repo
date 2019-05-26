@@ -31,7 +31,7 @@ notSpaces1 = plus notSpace
 
 main :: IO ()
 main = do
-  (maybeRemoteName, maybeNewPort, doRemovePort) <- options "Converts https git remote to ssh (e.g. https://github.com/myuser/myrepo to git@github.com:myuser/myrepo.git)" parser
+  (maybeRemoteName, maybeNewPort, doRemovePort) <- options "Converts https git remote to ssh (e.g. https://github.com/myusername/myrepo to ssh://git@github.com/myusername/myrepo.git)" parser
 
   when (doRemovePort && isJust maybeNewPort) (die "--port and --unset-port are self-excluding")
 
