@@ -45,14 +45,14 @@ main = do
     limit 1 &
     sed (between (suffix $ notSpaces <> spaces1) (prefix $ spaces1 <> notSpaces) notSpaces1)
 
-  when (Data.Text.null remoteUrl) (die $ "Url for " <> remoteName <> " not found")
+  when (Data.Text.null remoteUrl) (die $ "Url for \"" <> remoteName <> "\" remote not found")
 
-  PP.putDoc $ PP.annotate (PP.color PP.Blue) ("Current " <> PP.pretty remoteName <> " remote url:    ") <> PP.pretty remoteUrl <> PP.line
+  PP.putDoc $ PP.annotate (PP.color PP.Blue) ("Current \"" <> PP.pretty remoteName <> "\" remote url:    ") <> PP.pretty remoteUrl <> PP.line
 
   let maybeParsedUrlObj = parseUrl remoteUrl
   -- printf ("maybeParsedUrlObj=" % w % "\n") maybeParsedUrlObj
 
-  parsedUrlObj <- maybe (die $ "Invalid url for " <> remoteName <> ": " <> remoteUrl) return maybeParsedUrlObj
+  parsedUrlObj <- maybe (die $ "Invalid url for \"" <> remoteName <> "\" remote: " <> remoteUrl) return maybeParsedUrlObj
 
   -- printf ("parsedUrlObj=" % w % "\n") parsedUrlObj
 
@@ -67,11 +67,11 @@ main = do
   -- printf ("parsedUrlObj'=" % w % "\n") parsedUrlObj'
 
   let normalizedUrl = normalizeUrl parsedUrlObj'
-  PP.putDoc $ PP.annotate (PP.color PP.Blue) ("Normalized " <> PP.pretty remoteName <> " remote url: ") <> PP.pretty normalizedUrl <> PP.line
+  PP.putDoc $ PP.annotate (PP.color PP.Blue) ("Normalized \"" <> PP.pretty remoteName <> "\" remote url: ") <> PP.pretty normalizedUrl <> PP.line
 
   if normalizedUrl == remoteUrl
-    then printf "Url not changed\n"
+    then printf "Url was not updated\n"
     else (do
       procs "git" ["remote", "set-url", remoteName, normalizedUrl] empty
-      printf "Url changed\n"
+      printf "Url was updated\n"
     )
