@@ -2,6 +2,8 @@
 
 [![built with nix](https://builtwithnix.org/badge.svg)](https://builtwithnix.org)
 
+![image](https://i.imgur.com/swu60It.png)
+
 Script to automate https://help.github.com/articles/why-is-git-always-asking-for-my-password
 
 Transforms:
