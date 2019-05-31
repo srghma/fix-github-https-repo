@@ -1,5 +1,7 @@
 # fix-github-https-repo
 
+[![built with nix](https://builtwithnix.org/badge.svg)](https://builtwithnix.org)
+
 Script to automate https://help.github.com/articles/why-is-git-always-asking-for-my-password
 
 Transforms:
